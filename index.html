@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="http://www.freeiconspng.com/uploads/weather-icon-png-2.png" type="image/png">
+    <link rel="stylesheet" href="./css/weather-icons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css" />
+    <script src=" https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Local Weather</title>
+</head>
+
+<body>
+    <div id='root' class="container">
+        <h1 class="title is-1">Weather App <i class="wi wi-umbrella"></i></h1>
+        <div id="weather" class="column is-half is-offset-one-quarter" v-show="navGeo">
+            <p class="huge-w-icon"><i :class="[icon]"></i></p>
+            <p class="huge-temp" @click='changeToFahrenheit'><i class="wi wi-thermometer"></i> {{ temp }}<i class="wi wi-celsius"></i></p>
+            <h1 id="w-desc" class="title is-1">{{ weather }}</h1>
+            <h3 class="subtitle is-3">{{ location }}</h3>
+            <a class="button" @click='changeToFahrenheit'> °C/°F </a>
+        </div>
+    </div>
+
+    <!-- scripts call -->
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src=" main.js "></script>
+</body>
+
+</html>
