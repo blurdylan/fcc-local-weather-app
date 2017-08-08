@@ -18,7 +18,8 @@
         <h1 class="title is-1">Weather App <i class="wi wi-umbrella"></i></h1>
         <div id="weather" class="column is-half is-offset-one-quarter" v-show="navGeo">
             <p class="huge-w-icon"><i :class="[icon]"></i></p>
-            <p class="huge-temp" @click='changeToFahrenheit'><i class="wi wi-thermometer"></i> {{ temp }}<i class="wi wi-celsius"></i></p>
+            <p class="huge-temp" @click='changeToFahrenheit'><i class="wi wi-thermometer"></i> {{ temp }}<i v-if="isCelsius" class="wi wi-celsius"></i><i v-if="!isCelsius"
+                    class="wi wi-fahrenheit"></i></p>
             <h1 id="w-desc" class="title is-1">{{ weather }}</h1>
             <h3 class="subtitle is-3">{{ location }}</h3>
             <a class="button" @click='changeToFahrenheit'> °C/°F </a>
